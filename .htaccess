@@ -1,8 +1,6 @@
 addDefaultCharset utf8
 
 RewriteEngine on #Включает mod_rewrite - модуль сервера апач для манипуляции и изменения УРЛ
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
 #RewriteRule <regexp> <path> [flags] - это синтаксис
 
 # основные флаги
@@ -10,4 +8,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # QSA - говорит что нужно передать как часть строки запроса
 # NC - задает чувствительность к регистру
 
-RewriteRule ^(.*)$ index.php?param=$1 [QSA,L]
+RewriteRule ^(.*)$ /public/$1 [QSA,L]
